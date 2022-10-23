@@ -48,10 +48,11 @@ body{
 
 .logo{
     background: #ffffff;
+    max-width: 10%;
 }
 
 .logo img{
-    width: 200px;
+    width: 100%;
 }
 
 nav{
@@ -61,7 +62,7 @@ nav{
     justify-content: end;
 }
 
- nav ul{ 
+nav ul{ 
     display: flex;
     align-items: center;
 }
@@ -74,8 +75,20 @@ nav ul a li {
     color: #FFFCFC;
     font-style: italic;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 25px;
 
+}
+
+@media screen and (max-width: 1200px) {
+    nav ul a li{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav ul a li{
+        font-size: 15px;
+    }
 }
 
 /* gallery section */
@@ -85,12 +98,16 @@ nav ul a li {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     position: relative;
 }
 
+.gallery div{
+    width: 20%;
+}
+
 .gallery img{
-    width: 400px;
+    width: 100%;
 }
 
 .flexCol{
@@ -98,50 +115,75 @@ nav ul a li {
     flex-direction: column;
     gap: 30px;
 }
-.flexCol img{
-    height: 360px;
+
+
+@media screen and (max-width: 1200px) {
+    .gallery{
+        min-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery{
+        height: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .gallery div{
+        width: 40%;
+        height: 20%;
+    }
+    .gallery img{
+        height: 250px;
+    } 
 }
 
 /* galery animation */
 
 .leftCenter{
-    position: absolute;
-    left: 28%;
+    position: relative;
     animation-duration: 1s;
     animation-name: animationGaleryLeft;
 }
 
 .leftImg{
-    position: absolute;
-    left: 3%;
+    position: relative;
     animation-duration: 2s;
     animation-name: animationGaleryLeft;
 }
 
-@keyframes animationGaleryLeft{
-    from{
-        margin-left: -110%;
+@keyframes animationGaleryLeft {
+
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
     }
 }
 
 .rightCenter{
-    position: absolute;
-    right: 28%;
+    position: relative;
     animation-duration: 1s;
     animation-name: animationGaleryRight;
 }
 
 .rightImg{
-    position: absolute;
-    right: 3%;
+    position: relative;
     animation-duration: 2s;
     animation-name: animationGaleryRight; 
 }
 
 @keyframes animationGaleryRight{
-    from{
-        margin-right: -110%;
+    from {
+        right: -100%;
     }
+
+    to {
+        right: 0;
+    }
+
 }
 
 
@@ -158,8 +200,7 @@ nav ul a li {
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-around;
-    position: relative;
-    width: 50%;
+    width: 60%;
 }
 
 .serviseinfo p {
@@ -167,25 +208,61 @@ nav ul a li {
     margin-bottom: 54px;
     font-style: italic;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 25px;
 }
 
 .serviceInfoBlok{
     padding-top: 26px;
-    position: relative;
     text-align: center;
+    margin: 10px;
+    width: 32%;
 }
 
 .serviceInfoBlok img{
-    width: 70%;  
+    width: 100%;  
 }
 
 .services .setviceImg{
     background-image: url(../img/seervices/mainService.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
+    width: 40%;
 }
+
+
+
+@media screen and (max-width: 992px) {
+    .wrapper{
+        height: auto;
+    }
+    .services{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .services .setviceImg{
+        width: 100%;
+        height: 90vh;
+    }
+    .serviseinfo{
+        width: 100%;
+        height: 1000px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .services .setviceImg{
+        display: none;
+    }
+    .serviseinfo{
+        width: 100%;
+    }
+    .serviseinfo p{
+        font-size: 29px;
+    }
+}
+
+
 
 /* services animation */
 
@@ -263,6 +340,7 @@ nav ul a li {
 .team .cards{
     display: flex;
     justify-content: space-around;
+    
 }
 
 .team .cards .card{
@@ -305,6 +383,35 @@ nav ul a li {
 .team .cards .card:nth-child(4){
     background-image: url(../img/team/Rectangle\(4\).png);
 }
+
+
+@media screen and (max-width: 992px) {
+    .team .cards{
+        flex-wrap: wrap;
+    }
+    .team .cards .card{
+        margin: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team h1{
+        font-size: 50px;
+    }
+    .cards{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .card{
+        margin: 10px;
+    }
+    .wrapper{
+        height: auto;
+    }
+}
+
+
 
 /* hover on team section */
 
@@ -371,6 +478,29 @@ nav ul a li {
     width: 50%;
     height: 572px;
 }
+
+
+@media screen and (max-width: 992px)  {
+    .contacts{
+        flex-direction: column;
+    }
+    .map{
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    .contacts{
+        flex-direction: column-reverse;
+    }
+    .map{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* footer section */
 
 .footer{
     display: flex;
