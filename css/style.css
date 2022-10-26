@@ -67,7 +67,7 @@ nav ul a{
 }
 
 nav ul li a{
-    color: #FFFCFC;
+    color: #FFFCFC !important;
     font-style: italic ;
     font-weight: 700 !important;
     font-size: 25px !important;
